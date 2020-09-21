@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="PLATFORM" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/AuxPublisher" />
+            <option value="$PROJECT_DIR$/CustomCdnPublish" />
+            <option value="$PROJECT_DIR$/CustomVideoCapture" />
+            <option value="$PROJECT_DIR$/CustomVideoRender" />
+            <option value="$PROJECT_DIR$/DataRecord" />
+            <option value="$PROJECT_DIR$/LoginMultiRoom" />
+            <option value="$PROJECT_DIR$/Mediaplayer" />
+            <option value="$PROJECT_DIR$/Mixer" />
+            <option value="$PROJECT_DIR$/Mixing" />
+            <option value="$PROJECT_DIR$/PlayStream" />
+            <option value="$PROJECT_DIR$/PublishStream" />
+            <option value="$PROJECT_DIR$/QuickStart" />
+            <option value="$PROJECT_DIR$/RoomMessage" />
+            <option value="$PROJECT_DIR$/SoundLevel" />
+            <option value="$PROJECT_DIR$/SoundProcessing" />
+            <option value="$PROJECT_DIR$/Videotalk" />
+            <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/main" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AuxPublisher/AuxPublisher.iml" filepath="$PROJECT_DIR$/.idea/modules/AuxPublisher/AuxPublisher.iml" group="video/AuxPublisher" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CustomCdnPublish/CustomCdnPublish.iml" filepath="$PROJECT_DIR$/.idea/modules/CustomCdnPublish/CustomCdnPublish.iml" group="video/CustomCdnPublish" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CustomVideoCapture/CustomVideoCapture.iml" filepath="$PROJECT_DIR$/.idea/modules/CustomVideoCapture/CustomVideoCapture.iml" group="video/CustomVideoCapture" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CustomVideoRender/CustomVideoRender.iml" filepath="$PROJECT_DIR$/.idea/modules/CustomVideoRender/CustomVideoRender.iml" group="video/CustomVideoRender" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DataRecord/DataRecord.iml" filepath="$PROJECT_DIR$/.idea/modules/DataRecord/DataRecord.iml" group="video/DataRecord" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LoginMultiRoom/LoginMultiRoom.iml" filepath="$PROJECT_DIR$/.idea/modules/LoginMultiRoom/LoginMultiRoom.iml" group="video/LoginMultiRoom" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Mediaplayer/Mediaplayer.iml" filepath="$PROJECT_DIR$/.idea/modules/Mediaplayer/Mediaplayer.iml" group="video/Mediaplayer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Mixer/Mixer.iml" filepath="$PROJECT_DIR$/.idea/modules/Mixer/Mixer.iml" group="video/Mixer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Mixing/Mixing.iml" filepath="$PROJECT_DIR$/.idea/modules/Mixing/Mixing.iml" group="video/Mixing" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PlayStream/PlayStream.iml" filepath="$PROJECT_DIR$/.idea/modules/PlayStream/PlayStream.iml" group="video/PlayStream" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PublishStream/PublishStream.iml" filepath="$PROJECT_DIR$/.idea/modules/PublishStream/PublishStream.iml" group="video/PublishStream" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/QuickStart/QuickStart.iml" filepath="$PROJECT_DIR$/.idea/modules/QuickStart/QuickStart.iml" group="video/QuickStart" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RoomMessage/RoomMessage.iml" filepath="$PROJECT_DIR$/.idea/modules/RoomMessage/RoomMessage.iml" group="video/RoomMessage" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SoundLevel/SoundLevel.iml" filepath="$PROJECT_DIR$/.idea/modules/SoundLevel/SoundLevel.iml" group="video/SoundLevel" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SoundProcessing/SoundProcessing.iml" filepath="$PROJECT_DIR$/.idea/modules/SoundProcessing/SoundProcessing.iml" group="video/SoundProcessing" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Videotalk/Videotalk.iml" filepath="$PROJECT_DIR$/.idea/modules/Videotalk/Videotalk.iml" group="video/Videotalk" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/common.iml" group="video/common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/main/main.iml" filepath="$PROJECT_DIR$/.idea/modules/main/main.iml" group="video/main" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/video.iml" filepath="$PROJECT_DIR$/.idea/modules/video.iml" group="video" />
+    </modules>
+  </component>
+</project>

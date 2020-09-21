@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./main/libs/ZegoExpressEngine.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/main/libs/ZegoExpressEngine.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

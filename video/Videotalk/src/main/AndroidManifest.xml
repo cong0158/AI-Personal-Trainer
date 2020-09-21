@@ -1,0 +1,15 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="im.zego.video.talk" >
+    <application>
+        <activity android:name="im.zego.video.talk.ui.ZGVideoTalkUI"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name="im.zego.video.talk.ui.SportVideoTalkUI"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name="im.zego.video.talk.ui.SportShootUI"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name="im.zego.video.talk.ui.CoachVideoTalkUI"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name="im.zego.video.talk.ui.CourseMenuUI"
+            android:screenOrientation="landscape"></activity>
+    </application>
+</manifest>

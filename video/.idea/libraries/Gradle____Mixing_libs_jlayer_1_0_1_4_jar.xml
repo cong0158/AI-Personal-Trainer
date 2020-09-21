@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./Mixing/libs/jlayer-1.0.1.4.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Mixing/libs/jlayer-1.0.1.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
