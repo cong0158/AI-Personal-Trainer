@@ -93,82 +93,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mainAdapter.setOnItemClickListener((view, position) -> {
-            boolean orRequestPermission = this.checkOrRequestPermission(REQUEST_PERMISSION_CODE);
-            ModuleInfo moduleInfo = (ModuleInfo) view.getTag();
-            if (orRequestPermission) {
-                String module = moduleInfo.getModule();
-                if (module.equals(getString(R.string.tx_title_quickstart))) {
-                    BasicCommunicationActivity.actionStart(MainActivity.this);
-                } else if (module.equals(getString(R.string.tx_module_publish))) {
-                    PublishActivityUI.actionStart(MainActivity.this);
-                } else if (module.equals(getString(R.string.tx_module_play))) {
-                    PlayActivityUI.actionStart(MainActivity.this);
-                } else if (module.equals(getString(R.string.tx_module_custom_cdn_publish))) {
-                    CustomCDNPublishActivity.actionStart(MainActivity.this);
-                } else if (module.equals(getString(R.string.tx_module_mixer))) {
-                    MixerMainActivity.actionStart(MainActivity.this);
-                } else if (module.equals(getString(R.string.tx_module_im))) {
-                    IMActivity.actionStart(MainActivity.this);
-                } else if (module.equals(getString(R.string.tx_module_soundlevelandspectrum))) {
-                    SoundLevelAndSpectrumMainActivity.actionStart(MainActivity.this);
-                } else if (module.equals(getString(R.string.tx_module_mediaplayer))) {
-                    MediaplayerMainActivity.actionStart(MainActivity.this);
-                } else if (module.equals(getString(R.string.tx_module_custom_render))) {
-                    ZGVideoRenderTypeUI.actionStart(MainActivity.this);
-                } else if (module.equals(getString(R.string.tx_module_custom_capture))) {
-                    ZGVideoCaptureOriginUI.actionStart(MainActivity.this);
-                } else if (module.equals(getString(R.string.txt_title_aux))) {
-                    //ZGAuxPublisherLoginUI.actionStart(MainActivity.this);
-                    SportShootUI.actionStart(MainActivity.this);
-                } else if (module.equals(getString(R.string.txt_title_video_talk))) {
-                    //ZGVideoTalkUI.actionStart(MainActivity.this);
-                    SportVideoTalkUI.actionStart(MainActivity.this);
-                } else if (module.equals(getString(R.string.txt_title_mixing))) {
-                    ZGMixingDemoUI.actionStart(MainActivity.this);
-                }else if (module.equals(getString(R.string.txt_title_sound_processing))) {
-                    SoundProcessingMainUI.actionStart(MainActivity.this);
-                }else if(module.equals(getString(R.string.txt_record_data))){
-                    DataRecordActivity.actionStart(MainActivity.this);
-                }else if(module.equals(getString(R.string.txt_login_multi_room))){
-                    LoginMultiRoomActivity.actionStart(MainActivity.this);
-                }
-            }
-        });
-
         // UI Setting
         binding.moduleList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         binding.moduleList.setAdapter(mainAdapter);
         binding.moduleList.setItemAnimator(new DefaultItemAnimator());
-
-        // Add Module
-        mainAdapter.addModuleInfo(new ModuleInfo()
-                .moduleName(getString(R.string.tx_title_quickstart)).titleName(getString(R.string.tx_title_quickstart)));
-        mainAdapter.addModuleInfo(new ModuleInfo()
-                .moduleName(getString(R.string.tx_module_play)));
-        mainAdapter.addModuleInfo(new ModuleInfo()
-                .moduleName(getString(R.string.tx_module_publish)));
-        mainAdapter.addModuleInfo(new ModuleInfo()
-                .moduleName(getString(R.string.tx_module_custom_cdn_publish)).titleName(getString(R.string.tx_title_advance)));
-        mainAdapter.addModuleInfo(new ModuleInfo()
-                .moduleName(getString(R.string.tx_module_mixer)));
-        mainAdapter.addModuleInfo(new ModuleInfo()
-                .moduleName(getString(R.string.txt_title_mixing)));
-        mainAdapter.addModuleInfo(new ModuleInfo()
-                .moduleName(getString(R.string.tx_module_im)));
-        mainAdapter.addModuleInfo(new ModuleInfo()
-                .moduleName(getString(R.string.tx_module_soundlevelandspectrum)));
-        mainAdapter.addModuleInfo(new ModuleInfo()
-                .moduleName(getString(R.string.tx_module_mediaplayer)));
-        mainAdapter.addModuleInfo(new ModuleInfo()
-                .moduleName(getString(R.string.tx_module_custom_render)));
-        mainAdapter.addModuleInfo(new ModuleInfo()
-                .moduleName(getString(R.string.tx_module_custom_capture)));
-        mainAdapter.addModuleInfo(new ModuleInfo().moduleName(getString(R.string.txt_title_aux)));
-        mainAdapter.addModuleInfo(new ModuleInfo().moduleName(getString(R.string.txt_title_video_talk)));
-        mainAdapter.addModuleInfo(new ModuleInfo().moduleName(getString(R.string.txt_title_sound_processing)));
-        mainAdapter.addModuleInfo(new ModuleInfo().moduleName(getString(R.string.txt_record_data)));
-        mainAdapter.addModuleInfo(new ModuleInfo().moduleName(getString(R.string.txt_login_multi_room)));
     }
 
 
