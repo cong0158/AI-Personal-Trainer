@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
-    private boolean isStudent = true;
+    private boolean isStudent = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
