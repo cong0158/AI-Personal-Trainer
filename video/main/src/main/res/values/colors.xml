@@ -3,4 +3,21 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="yellow">#ffff00</color>
+    <color name="red">#ff0000</color>
+    <color name="diancolor">#4613a9</color>
+    <color name="dividerbg">#ff0000</color>
+    <color name="textcolor">#785615</color>
+    <color name="line">#D1D9E6</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffff</color>
+    <color name="trans">#b0000000</color>
+    <color name="transl">#bb000000</color>
+    <color name="transl2">#33000000</color>
+    <color name="trans2">#aa000000</color>
+    <color name="msgcolor">#7C7C7C</color>
+    <color name="downloadingbg">#b0ABB1BD</color>
+    <color name="ffb">#7F7F7B</color>
+    <color name="lightgraw">#C1C1C1</color>
+    <color name="no_back">#00FFFFFF</color>
 </resources>

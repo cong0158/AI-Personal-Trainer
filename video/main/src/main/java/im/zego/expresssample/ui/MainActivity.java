@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
+    private boolean isStudent = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,6 +99,11 @@ public class MainActivity extends AppCompatActivity {
         binding.moduleList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         binding.moduleList.setAdapter(mainAdapter);
         binding.moduleList.setItemAnimator(new DefaultItemAnimator());
+
+        //是否安装到电视上,到电视直接进入学员观察端
+        if (isStudent){
+            SportVideoTalkUI.actionStart(MainActivity.this);
+        }
     }
 
 
