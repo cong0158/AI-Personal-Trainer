@@ -65,6 +65,7 @@ public class SportVideoTalkUI extends Activity {
     private TextureView textureView;
     private Map<String,TextureView> viewMap;
     private List<String> streamIdList;
+
     public static void actionStart(Activity activity) {
         Intent intent = new Intent(activity, SportVideoTalkUI.class);
         activity.startActivity(intent);
@@ -219,6 +220,7 @@ public class SportVideoTalkUI extends Activity {
         viewMap=new HashMap<>();
         streamIdList=new ArrayList<>();
         binding.roomId.setText("课程选择");
+        binding.roomId.setSelected(true);
         binding.roomId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
