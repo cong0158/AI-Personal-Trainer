@@ -90,19 +90,32 @@
                     android:focusable="true"/>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@color/border_color" />
+
+                <TextView
+                    android:id="@+id/coach_shoot"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:onClick="jumpCoachShoot"
+                    android:textColor="@drawable/tv_focus_selector"
+                    android:focusable="true"/>
+            </LinearLayout>
+
         </LinearLayout>
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="1px"
             android:background="@color/border_color" />
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/module_list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="invisible"/>
 
     </LinearLayout>
 

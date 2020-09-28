@@ -3,43 +3,28 @@ package im.zego.video.talk.ui;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.TextureView;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
-import androidx.gridlayout.widget.GridLayout;
 
 import im.zego.common.util.SettingDataUtil;
 import im.zego.video.talk.R;
 import im.zego.video.talk.databinding.CoachTalkBinding;
-import im.zego.video.talk.databinding.SportTalkBinding;
-import im.zego.video.talk.utils.CommonTools;
-import im.zego.video.talk.utils.ScreenHelper;
 
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import im.zego.common.util.AppLogger;
-import im.zego.common.widgets.log.FloatingView;
 import im.zego.zegoexpress.ZegoExpressEngine;
 import im.zego.zegoexpress.ZegoMediaPlayer;
 import im.zego.zegoexpress.callback.IZegoEventHandler;
 import im.zego.zegoexpress.callback.IZegoIMSendCustomCommandCallback;
-import im.zego.zegoexpress.callback.IZegoMediaPlayerEventHandler;
-import im.zego.zegoexpress.callback.IZegoMediaPlayerLoadResourceCallback;
-import im.zego.zegoexpress.constants.ZegoMediaPlayerNetworkEvent;
-import im.zego.zegoexpress.constants.ZegoMediaPlayerState;
 import im.zego.zegoexpress.constants.ZegoOrientation;
 import im.zego.zegoexpress.constants.ZegoPlayerState;
 import im.zego.zegoexpress.constants.ZegoPublisherState;
@@ -53,22 +38,18 @@ import im.zego.zegoexpress.entity.ZegoUser;
 import im.zego.zegoexpress.entity.ZegoVideoConfig;
 
 public class CoachVideoTalkUI extends Activity {
-    public static final String randomSuffix = "coach";
     public static final String showModel = "showModel";
     public static final String notShowModel = "notShowModel";
 
     private static final String TAG = "CoachVideoTalkUI";
+    private static final String userID = "userIdCoach";
+    private static final String userName = "userNameCoach";
+    private static final String mainStreamId = "mainStreamIdCoach";
 
     private CoachTalkBinding binding;
     public static final String mRoomID="VideoTalkRoom-1";
     private ZegoExpressEngine mSDKEngine;
-    private String userID;
-    private String userName;
-    private String mainStreamId;
-    private ZegoMediaPlayer mMediaplayer;
-    private TextureView textureView;
-    private Map<String,TextureView> viewMap;
-    private List<String> streamIdList;
+
     public static void actionStart(Activity activity) {
         Intent intent = new Intent(activity, CoachVideoTalkUI.class);
         activity.startActivity(intent);
@@ -91,26 +72,21 @@ public class CoachVideoTalkUI extends Activity {
     }
 
     private void loginRoomAndPublishStream() {
-        userID = "user" + randomSuffix;
-        userName = "userName" + randomSuffix;
-        mainStreamId="streamId"+randomSuffix;
-        streamIdList.add(mainStreamId);
-        viewMap.put(mainStreamId,textureView);
         ZegoRoomConfig config = new ZegoRoomConfig();
         /* 使能用户登录/登出房间通知 */
         /* Enable notification when user login or logout */
         config.isUserStatusNotify = true;
         mSDKEngine.loginRoom(mRoomID, new ZegoUser(userID, userName), config);
         AppLogger.getInstance().i("startPublishStream streamId:"+mainStreamId);
-        ZegoCanvas zegoCanvas = new ZegoCanvas(binding.localView);
-        zegoCanvas.viewMode = ZegoViewMode.ASPECT_FIT;
+//        ZegoCanvas zegoCanvas = new ZegoCanvas(binding.localView);
+//        zegoCanvas.viewMode = ZegoViewMode.ASPECT_FIT;
         ZegoVideoConfig videoConfig = new ZegoVideoConfig();
         videoConfig.setEncodeResolution(640, 360);
         ZegoExpressEngine.getEngine().setVideoConfig(videoConfig);
         ZegoExpressEngine.getEngine().setAppOrientation(ZegoOrientation.ORIENTATION_90);
         // 设置预览视图及视图展示模式
-        mSDKEngine.startPreview(zegoCanvas);
-        mSDKEngine.startPublishingStream(mainStreamId);
+//        mSDKEngine.startPreview(zegoCanvas);
+//        mSDKEngine.startPublishingStream(mainStreamId);
 
     }
 
@@ -163,36 +139,21 @@ public class CoachVideoTalkUI extends Activity {
             if(updateType == ZegoUpdateType.ADD){
                 for(ZegoStream zegoStream: streamList){
                     AppLogger.getInstance().i("onRoomStreamUpdate: ZegoUpdateType.ADD streamId:"+zegoStream.streamID);
-                    TextureView addTextureView=new TextureView(CoachVideoTalkUI.this);
-                    int row=streamIdList.size()/2;
-                    int column=streamIdList.size()%2;
-                    addToGridLayout(row,column,addTextureView);
-                    viewMap.put(zegoStream.streamID,addTextureView);
-                    streamIdList.add(zegoStream.streamID);
-                    mSDKEngine.startPlayingStream(zegoStream.streamID, new ZegoCanvas(binding.remoteView));
+                    if(zegoStream.streamID.equals(CoachShootUI.mainStreamId)){
+                        mSDKEngine.startPlayingStream(zegoStream.streamID, new ZegoCanvas(binding.remoteView));
+                    }else if(zegoStream.streamID.equals(SportShootUI.mainStreamId)){
+                        mSDKEngine.startPlayingStream(zegoStream.streamID, new ZegoCanvas(binding.localView));
+                    }
                 }
             }else if(updateType == ZegoUpdateType.DELETE){// callback in UIThread
                 for(ZegoStream zegoStream: streamList){
                     AppLogger.getInstance().i("onRoomStreamUpdate:  ZegoUpdateType.DELETE streamId:"+zegoStream.streamID);
                     mSDKEngine.stopPlayingStream(zegoStream.streamID);
-                    streamIdList.remove(zegoStream.streamID);
-                    notifyGridLayout();
-                    viewMap.remove(zegoStream.streamID);
                 }
             }
         }
     };
 
-    private void notifyGridLayout() {
-//        int j=0;
-//        binding.gridLayout.removeAllViews();
-//        for(String streamId:streamIdList){
-//            int row=j/2;
-//            int column=j%2;
-//            addToGridLayout(row,column,viewMap.get(streamId));
-//            j++;
-//        }
-    }
 
     @Override
     protected void onDestroy() {
@@ -201,42 +162,16 @@ public class CoachVideoTalkUI extends Activity {
         // 登出房间并释放ZEGO SDK
         //Log out of the room and release the ZEGO SDK
         logoutLiveRoom();
-        destroyLocalMedia();
     }
     // 登出房间，去除推拉流回调监听并释放ZEGO SDK
     //Log out of the room, remove the push-pull stream callback listener and release the ZEGO SDK
     public void logoutLiveRoom() {
         mSDKEngine.logoutRoom(mRoomID);
         ZegoExpressEngine.destroyEngine(null);
-//        binding.gridLayout.removeView(textureView);
-        viewMap.remove(mainStreamId);
-        streamIdList.clear();
     }
     private void initView() {
-        viewMap=new HashMap<>();
-        streamIdList=new ArrayList<>();
         binding.roomId.setText("教练教学端");
         binding.roomConnectState.setText("");
-        initGridLayout();
-    }
-
-    private void initGridLayout() {
-//        binding.gridLayout.setRowCount(30);//默认最大是30行,一共30*2共60个窗口
-//        binding.gridLayout.setColumnCount(2);
-//        textureView=new TextureView(this);
-//        addToGridLayout(0,0,textureView);
-    }
-    public void addToGridLayout(int row,int column,TextureView textureView){
-        //设置它的行 和 权重 有了权重才能水平均匀分布
-        //由于方法重载，注意这个地方的1.0f 必须是float，
-//        GridLayout.Spec rowSpec = GridLayout.spec(row, 1.0f);//行
-//        GridLayout.Spec columnSpec = GridLayout.spec(column, 1.0f);//列
-//        GridLayout.LayoutParams params = new GridLayout.LayoutParams(rowSpec, columnSpec);
-//        params.setGravity(Gravity.CENTER);
-//        params.setMargins(10,10,10,10);//px
-//        params.height = (int) ((ScreenHelper.getSingleton(this.getApplication()).getScreenWidthPixels()/2-20)*1.6);//px
-//        params.width = ScreenHelper.getSingleton(this.getApplication()).getScreenWidthPixels()/2-20;
-//        binding.gridLayout.addView(textureView, params);
     }
 
     public void showModelState(Boolean isChecked){
@@ -245,7 +180,8 @@ public class CoachVideoTalkUI extends Activity {
         }
         final String msg = isChecked ? showModel : notShowModel;
         ArrayList<ZegoUser> userList = new ArrayList<>();
-        ZegoUser user = new ZegoUser("userstudent", "userNamestudent");
+        //指定要接收的对象
+        ZegoUser user = new ZegoUser(SportVideoTalkUI.userID, SportVideoTalkUI.userName);
         userList.add(user);
         if (!msg.equals("")) {
             mSDKEngine.sendCustomCommand(mRoomID, msg  ,userList, new IZegoIMSendCustomCommandCallback() {
@@ -292,17 +228,6 @@ public class CoachVideoTalkUI extends Activity {
         super.onStop();
 //        FloatingView.get().detach(this);
     }
-
-
-    private void destroyLocalMedia(){
-        if(mMediaplayer != null){
-            mMediaplayer.destroyMediaPlayer();
-            mMediaplayer.setEventHandler(null);
-            mMediaplayer = null;
-        }
-    }
-
-
 
 }
 

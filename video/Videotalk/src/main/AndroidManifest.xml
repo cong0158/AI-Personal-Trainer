@@ -9,6 +9,8 @@
             android:screenOrientation="landscape"></activity>
         <activity android:name="im.zego.video.talk.ui.CoachVideoTalkUI"
             android:screenOrientation="landscape"></activity>
+        <activity android:name="im.zego.video.talk.ui.CoachShootUI"
+            android:screenOrientation="landscape"></activity>
         <activity android:name="im.zego.video.talk.ui.CourseMenuUI"
             android:screenOrientation="landscape"></activity>
     </application>

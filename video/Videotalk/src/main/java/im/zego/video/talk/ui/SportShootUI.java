@@ -41,16 +41,15 @@ import im.zego.zegoexpress.entity.ZegoStream;
 import im.zego.zegoexpress.entity.ZegoUser;
 import im.zego.zegoexpress.entity.ZegoVideoConfig;
 
+//学员摄像端
 public class SportShootUI extends Activity {
+    public static final String userID = "userIdStudentShoot";
+    public static final String userName = "userNameStudentShoot";
+    public static final String mainStreamId = "streamIdStudentShoot";
+
     private SportShootBinding binding;
     public static final String mRoomID="VideoTalkRoom-1";
     private ZegoExpressEngine mSDKEngine;
-    private String userID;
-    private String userName;
-    private String mainStreamId;
-    private TextureView textureView;
-    private Map<String,TextureView> viewMap;
-    private List<String> streamIdList;
     public static void actionStart(Activity activity) {
         Intent intent = new Intent(activity, SportShootUI.class);
         activity.startActivity(intent);
@@ -73,12 +72,6 @@ public class SportShootUI extends Activity {
     }
 
     private void loginRoomAndPublishStream() {
-        String randomSuffix = String.valueOf(new Date().getTime() % (new Date().getTime() / 1000));
-        userID = "user" + randomSuffix;
-        userName = "userName" + randomSuffix;
-        mainStreamId="streamId"+randomSuffix;
-        streamIdList.add(mainStreamId);
-        viewMap.put(mainStreamId,textureView);
         ZegoRoomConfig config = new ZegoRoomConfig();
         /* 使能用户登录/登出房间通知 */
         /* Enable notification when user login or logout */
@@ -149,17 +142,6 @@ public class SportShootUI extends Activity {
         }
     };
 
-    private void notifyGridLayout() {
-//        int j=0;
-//        binding.gridLayout.removeAllViews();
-//        for(String streamId:streamIdList){
-//            int row=j/2;
-//            int column=j%2;
-//            addToGridLayout(row,column,viewMap.get(streamId));
-//            j++;
-//        }
-    }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -173,35 +155,12 @@ public class SportShootUI extends Activity {
     public void logoutLiveRoom() {
         mSDKEngine.logoutRoom(mRoomID);
         ZegoExpressEngine.destroyEngine(null);
-        viewMap.remove(mainStreamId);
-        streamIdList.clear();
     }
     private void initView() {
-        viewMap=new HashMap<>();
-        streamIdList=new ArrayList<>();
         binding.roomId.setText("学员摄像端");
         binding.roomConnectState.setText("");
-        initGridLayout();
     }
 
-    private void initGridLayout() {
-//        binding.gridLayout.setRowCount(30);//默认最大是30行,一共30*2共60个窗口
-//        binding.gridLayout.setColumnCount(2);
-//        textureView=new TextureView(this);
-//        addToGridLayout(0,0,textureView);
-    }
-    public void addToGridLayout(int row,int column,TextureView textureView){
-        //设置它的行 和 权重 有了权重才能水平均匀分布
-        //由于方法重载，注意这个地方的1.0f 必须是float，
-//        GridLayout.Spec rowSpec = GridLayout.spec(row, 1.0f);//行
-//        GridLayout.Spec columnSpec = GridLayout.spec(column, 1.0f);//列
-//        GridLayout.LayoutParams params = new GridLayout.LayoutParams(rowSpec, columnSpec);
-//        params.setGravity(Gravity.CENTER);
-//        params.setMargins(10,10,10,10);//px
-//        params.height = (int) ((ScreenHelper.getSingleton(this.getApplication()).getScreenWidthPixels()/2-20)*1.6);//px
-//        params.width = ScreenHelper.getSingleton(this.getApplication()).getScreenWidthPixels()/2-20;
-//        binding.gridLayout.addView(textureView, params);
-    }
     public void operateCamera(Boolean isChecked){
         if(mSDKEngine!=null){
             mSDKEngine.enableCamera(isChecked);

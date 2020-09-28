@@ -6,12 +6,42 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be14dc64-0f7b-45be-9bdb-e43e7e7f6042" name="Default Changelist" comment="" />
+    <list default="true" id="be14dc64-0f7b-45be-9bdb-e43e7e7f6042" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Videotalk/src/main/java/im/zego/video/talk/ui/CoachShootUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Videotalk/src/main/res/layout/coach_shoot.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/AuxPublisher/AuxPublisher.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/AuxPublisher/AuxPublisher.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/CustomCdnPublish/CustomCdnPublish.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/CustomCdnPublish/CustomCdnPublish.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/CustomVideoCapture/CustomVideoCapture.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/CustomVideoCapture/CustomVideoCapture.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/CustomVideoRender/CustomVideoRender.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/CustomVideoRender/CustomVideoRender.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/DataRecord/DataRecord.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/DataRecord/DataRecord.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/LoginMultiRoom/LoginMultiRoom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/LoginMultiRoom/LoginMultiRoom.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Mediaplayer/Mediaplayer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Mediaplayer/Mediaplayer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Mixer/Mixer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Mixer/Mixer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Mixing/Mixing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Mixing/Mixing.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/PlayStream/PlayStream.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/PlayStream/PlayStream.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/PublishStream/PublishStream.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/PublishStream/PublishStream.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/QuickStart/QuickStart.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/QuickStart/QuickStart.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/RoomMessage/RoomMessage.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/RoomMessage/RoomMessage.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/SoundLevel/SoundLevel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/SoundLevel/SoundLevel.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/SoundProcessing/SoundProcessing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/SoundProcessing/SoundProcessing.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Videotalk/Videotalk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Videotalk/Videotalk.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/common/common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/common/common.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/main/main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/main/main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Videotalk/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Videotalk/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Videotalk/src/main/java/im/zego/video/talk/ui/CoachVideoTalkUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Videotalk/src/main/java/im/zego/video/talk/ui/CoachVideoTalkUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Videotalk/src/main/java/im/zego/video/talk/ui/SportShootUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Videotalk/src/main/java/im/zego/video/talk/ui/SportShootUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Videotalk/src/main/java/im/zego/video/talk/ui/SportVideoTalkUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Videotalk/src/main/java/im/zego/video/talk/ui/SportVideoTalkUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/main/java/im/zego/expresssample/ui/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/im/zego/expresssample/ui/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/res/layout/activity_main.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="TUP4C18813002257" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -37,7 +67,11 @@
     <option name="REMEMBER_PASSWORDS" value="true" />
     <option name="BUILD_TARGET_KEY" value="apk" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1hfqd7Slyw8OOWgpvMxRxJQFNeC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -159,9 +193,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="447" y="13" width="742" height="798" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1600659466595" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1600661520409">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1601258301166">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1600661520409" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1601258301166" />
   </component>
 </project>

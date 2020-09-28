@@ -4,34 +4,27 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.TextureView;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
-import androidx.gridlayout.widget.GridLayout;
 
 import im.zego.common.util.SettingDataUtil;
 import im.zego.video.talk.R;
 import im.zego.video.talk.adapter.MyExpandableListView;
 import im.zego.video.talk.databinding.SportTalkBinding;
 import im.zego.video.talk.utils.CommonTools;
-import im.zego.video.talk.utils.ScreenHelper;
 
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import im.zego.common.util.AppLogger;
-import im.zego.common.widgets.log.FloatingView;
 import im.zego.zegoexpress.ZegoExpressEngine;
 import im.zego.zegoexpress.ZegoMediaPlayer;
 import im.zego.zegoexpress.callback.IZegoEventHandler;
@@ -51,18 +44,20 @@ import im.zego.zegoexpress.entity.ZegoStream;
 import im.zego.zegoexpress.entity.ZegoUser;
 import im.zego.zegoexpress.entity.ZegoVideoConfig;
 
+//学员观察端
 public class SportVideoTalkUI extends Activity {
+    public static final String userID = "userStudent";
+    public static final String userName = "userNameStudent";
+
     private static final String TAG = "SportVideoTalkUI";
     private static final int REQUEST = 1;
 
     private SportTalkBinding binding;
     public static final String mRoomID="VideoTalkRoom-1";
     private ZegoExpressEngine mSDKEngine;
-    private String userID;
-    private String userName;
-    private String mainStreamId;
-    private ZegoMediaPlayer mMediaplayer;
-    private TextureView textureView;
+
+    private String mainStreamId = "streamIdStudent";
+    private ZegoMediaPlayer zegoMediaplayer;
     private Map<String,TextureView> viewMap;
     private List<String> streamIdList;
 
@@ -88,12 +83,7 @@ public class SportVideoTalkUI extends Activity {
     }
 
     private void loginRoomAndPublishStream() {
-        String randomSuffix = "student";
-        userID = "user" + randomSuffix;
-        userName = "userName" + randomSuffix;
-        mainStreamId="streamId"+randomSuffix;
         streamIdList.add(mainStreamId);
-        viewMap.put(mainStreamId,textureView);
         ZegoRoomConfig config = new ZegoRoomConfig();
         /* 使能用户登录/登出房间通知 */
         /* Enable notification when user login or logout */
@@ -108,7 +98,7 @@ public class SportVideoTalkUI extends Activity {
         ZegoExpressEngine.getEngine().setAppOrientation(ZegoOrientation.ORIENTATION_90);
         // 设置预览视图及视图展示模式
 //        mSDKEngine.startPreview(zegoCanvas);
-        mSDKEngine.startPublishingStream(mainStreamId);
+//        mSDKEngine.startPublishingStream(mainStreamId);
         createLocalMedia();
         playLocalMedia();
     }
@@ -158,16 +148,15 @@ public class SportVideoTalkUI extends Activity {
         public void onIMRecvCustomCommand(String roomID, ZegoUser fromUser, String command) {
             AppLogger.getInstance().i("onIMRecvCustomCommand: roomID = " + roomID + "fromUser :"+fromUser+", command= " + command);
             Toast.makeText(SportVideoTalkUI.this, "command1:" + command, Toast.LENGTH_SHORT).show();
-            String coachStreamId = "streamId"+CoachVideoTalkUI.randomSuffix;
             if(command.equals(CoachVideoTalkUI.showModel)){
-                if(streamIdList.contains(coachStreamId)){
+                if(streamIdList.contains(CoachShootUI.mainStreamId)){
                     destroyLocalMedia();
-                    mSDKEngine.startPlayingStream(coachStreamId, new ZegoCanvas(binding.localView));
+                    mSDKEngine.startPlayingStream(CoachShootUI.mainStreamId, new ZegoCanvas(binding.localView));
                 }
 
             }
             if(command.equals(CoachVideoTalkUI.notShowModel)){
-                mSDKEngine.stopPlayingStream(coachStreamId);
+                mSDKEngine.stopPlayingStream(CoachShootUI.mainStreamId);
                 createLocalMedia();
                 playLocalMedia();
             }
@@ -182,7 +171,7 @@ public class SportVideoTalkUI extends Activity {
                 for(ZegoStream zegoStream: streamList){
                     AppLogger.getInstance().i("onRoomStreamUpdate: ZegoUpdateType.ADD streamId:"+zegoStream.streamID);
                     streamIdList.add(zegoStream.streamID);
-                    if(!zegoStream.streamID.contains(CoachVideoTalkUI.randomSuffix)){
+                    if(zegoStream.streamID.equals(SportShootUI.mainStreamId)){//播放学员摄像端拍摄的流
                         mSDKEngine.startPlayingStream(zegoStream.streamID, new ZegoCanvas(binding.remoteView));
                     }
                 }
@@ -212,12 +201,9 @@ public class SportVideoTalkUI extends Activity {
     public void logoutLiveRoom() {
         mSDKEngine.logoutRoom(mRoomID);
         ZegoExpressEngine.destroyEngine(null);
-//        binding.gridLayout.removeView(textureView);
-        viewMap.remove(mainStreamId);
         streamIdList.clear();
     }
     private void initView() {
-        viewMap=new HashMap<>();
         streamIdList=new ArrayList<>();
         binding.roomId.setText("课程选择");
         binding.roomId.setSelected(true);
@@ -278,7 +264,7 @@ public class SportVideoTalkUI extends Activity {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == REQUEST && resultCode == CourseMenuUI.RESULT){
             resetCourseName();
-            if(mMediaplayer != null){
+            if(zegoMediaplayer != null){
                 playLocalMedia();
             }
         }
@@ -291,8 +277,8 @@ public class SportVideoTalkUI extends Activity {
     }
 
     private void createLocalMedia(){
-        mMediaplayer = ZegoMediaPlayer.createMediaPlayer();
-        mMediaplayer.setEventHandler(new IZegoMediaPlayerEventHandler() {
+        zegoMediaplayer = ZegoMediaPlayer.createMediaPlayer();
+        zegoMediaplayer.setEventHandler(new IZegoMediaPlayerEventHandler() {
 
             @Override
             public void onMediaPlayerNetworkEvent(ZegoMediaPlayer mediaPlayer, ZegoMediaPlayerNetworkEvent networkEvent) {
@@ -321,17 +307,17 @@ public class SportVideoTalkUI extends Activity {
     }
 
     private void destroyLocalMedia(){
-        if(mMediaplayer != null){
-            mMediaplayer.destroyMediaPlayer();
-            mMediaplayer.setEventHandler(null);
-            mMediaplayer = null;
+        if(zegoMediaplayer != null){
+            zegoMediaplayer.destroyMediaPlayer();
+            zegoMediaplayer.setEventHandler(null);
+            zegoMediaplayer = null;
         }
     }
 
     private void playLocalMedia(){
-        mMediaplayer.stop();
+        zegoMediaplayer.stop();
         String mp4Path = CourseMenuUI.groupId + "_" + CourseMenuUI.childId + ".mp4";
-        mMediaplayer.loadResource(CommonTools.getPath(SportVideoTalkUI.this, mp4Path), new IZegoMediaPlayerLoadResourceCallback() {
+        zegoMediaplayer.loadResource(CommonTools.getPath(SportVideoTalkUI.this, mp4Path), new IZegoMediaPlayerLoadResourceCallback() {
             @Override
             public void onLoadResourceCallback(int i) {
                 if(i != 0){
@@ -345,9 +331,9 @@ public class SportVideoTalkUI extends Activity {
                 AppLogger.getInstance().i("currentResourceTotalDuration: " );
                 Log.d(TAG, "currentResourceTotalDuration: " );
                 Toast.makeText(SportVideoTalkUI.this, "currentResourceTotalDuration: ", Toast.LENGTH_LONG).show();
-                mMediaplayer.setPlayerCanvas(new ZegoCanvas(binding.localView));
-                mMediaplayer.enableRepeat(true);
-                mMediaplayer.start();
+                zegoMediaplayer.setPlayerCanvas(new ZegoCanvas(binding.localView));
+                zegoMediaplayer.enableRepeat(true);
+                zegoMediaplayer.start();
 
             }
         });
