@@ -7,34 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be14dc64-0f7b-45be-9bdb-e43e7e7f6042" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Videotalk/src/main/java/im/zego/video/talk/ui/CoachShootUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Videotalk/src/main/res/layout/coach_shoot.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/AuxPublisher/AuxPublisher.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/AuxPublisher/AuxPublisher.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/CustomCdnPublish/CustomCdnPublish.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/CustomCdnPublish/CustomCdnPublish.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/CustomVideoCapture/CustomVideoCapture.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/CustomVideoCapture/CustomVideoCapture.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/CustomVideoRender/CustomVideoRender.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/CustomVideoRender/CustomVideoRender.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/DataRecord/DataRecord.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/DataRecord/DataRecord.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/LoginMultiRoom/LoginMultiRoom.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/LoginMultiRoom/LoginMultiRoom.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Mediaplayer/Mediaplayer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Mediaplayer/Mediaplayer.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Mixer/Mixer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Mixer/Mixer.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Mixing/Mixing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Mixing/Mixing.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/PlayStream/PlayStream.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/PlayStream/PlayStream.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/PublishStream/PublishStream.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/PublishStream/PublishStream.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/QuickStart/QuickStart.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/QuickStart/QuickStart.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/RoomMessage/RoomMessage.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/RoomMessage/RoomMessage.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/SoundLevel/SoundLevel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/SoundLevel/SoundLevel.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/SoundProcessing/SoundProcessing.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/SoundProcessing/SoundProcessing.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Videotalk/Videotalk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Videotalk/Videotalk.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/common/common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/common/common.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/main/main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/main/main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Videotalk/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Videotalk/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Videotalk/src/main/java/im/zego/video/talk/ui/CoachVideoTalkUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Videotalk/src/main/java/im/zego/video/talk/ui/CoachVideoTalkUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Videotalk/src/main/java/im/zego/video/talk/ui/SportShootUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Videotalk/src/main/java/im/zego/video/talk/ui/SportShootUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Videotalk/src/main/java/im/zego/video/talk/ui/SportVideoTalkUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Videotalk/src/main/java/im/zego/video/talk/ui/SportVideoTalkUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/main/java/im/zego/expresssample/ui/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/java/im/zego/expresssample/ui/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,41 +138,41 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1600662946718">
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1601277331875">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1600662946718" />
+    <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1601277331875" />
     <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1600674079552">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600674079552" />
-    <state width="1478" height="138" key="GridCell.Tab.0.bottom" timestamp="1600673593240">
+    <state width="1478" height="135" key="GridCell.Tab.0.bottom" timestamp="1601277969651">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="138" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600673593240" />
-    <state width="1478" height="138" key="GridCell.Tab.0.center" timestamp="1600673593240">
+    <state width="1478" height="135" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601277969651" />
+    <state width="1478" height="135" key="GridCell.Tab.0.center" timestamp="1601277969651">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="138" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1600673593240" />
-    <state width="1478" height="138" key="GridCell.Tab.0.left" timestamp="1600673593240">
+    <state width="1478" height="135" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601277969651" />
+    <state width="1478" height="135" key="GridCell.Tab.0.left" timestamp="1601277969651">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="138" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1600673593240" />
-    <state width="1478" height="138" key="GridCell.Tab.0.right" timestamp="1600673593240">
+    <state width="1478" height="135" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601277969651" />
+    <state width="1478" height="135" key="GridCell.Tab.0.right" timestamp="1601277969651">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="138" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1600673593240" />
+    <state width="1478" height="135" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601277969651" />
     <state x="270" y="54" key="SettingsEditor" timestamp="1600587842582">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1600587842582" />
-    <state x="447" y="13" width="742" height="798" key="find.popup" timestamp="1600659466595">
+    <state x="447" y="13" width="742" height="798" key="find.popup" timestamp="1601267865868">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="447" y="13" width="742" height="798" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1600659466595" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1601258301166">
+    <state x="447" y="13" width="742" height="798" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1601267865868" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1601267901109">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1601258301166" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1601267901109" />
   </component>
 </project>

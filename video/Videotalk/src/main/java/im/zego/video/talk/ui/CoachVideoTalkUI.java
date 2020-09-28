@@ -152,6 +152,15 @@ public class CoachVideoTalkUI extends Activity {
                 }
             }
         }
+
+        @Override
+        public void onRoomUserUpdate(String roomID, ZegoUpdateType updateType, ArrayList<ZegoUser> userList) {
+            super.onRoomUserUpdate(roomID, updateType, userList);
+            if(updateType == ZegoUpdateType.ADD){//当有其他用户加入房间时，将当前是否处于教学模式的信息发出去
+                Toast.makeText(CoachVideoTalkUI.this, "somebody add here", Toast.LENGTH_LONG).show();
+                showModelState(binding.model.isChecked());
+            }
+        }
     };
 
 

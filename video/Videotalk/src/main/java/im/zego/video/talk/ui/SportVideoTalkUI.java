@@ -58,8 +58,8 @@ public class SportVideoTalkUI extends Activity {
 
     private String mainStreamId = "streamIdStudent";
     private ZegoMediaPlayer zegoMediaplayer;
-    private Map<String,TextureView> viewMap;
     private List<String> streamIdList;
+    private boolean isShowModel;
 
     public static void actionStart(Activity activity) {
         Intent intent = new Intent(activity, SportVideoTalkUI.class);
@@ -149,6 +149,7 @@ public class SportVideoTalkUI extends Activity {
             AppLogger.getInstance().i("onIMRecvCustomCommand: roomID = " + roomID + "fromUser :"+fromUser+", command= " + command);
             Toast.makeText(SportVideoTalkUI.this, "command1:" + command, Toast.LENGTH_SHORT).show();
             if(command.equals(CoachVideoTalkUI.showModel)){
+                isShowModel = true;
                 if(streamIdList.contains(CoachShootUI.mainStreamId)){
                     destroyLocalMedia();
                     mSDKEngine.startPlayingStream(CoachShootUI.mainStreamId, new ZegoCanvas(binding.localView));
@@ -156,6 +157,7 @@ public class SportVideoTalkUI extends Activity {
 
             }
             if(command.equals(CoachVideoTalkUI.notShowModel)){
+                isShowModel = false;
                 mSDKEngine.stopPlayingStream(CoachShootUI.mainStreamId);
                 createLocalMedia();
                 playLocalMedia();
@@ -173,6 +175,10 @@ public class SportVideoTalkUI extends Activity {
                     streamIdList.add(zegoStream.streamID);
                     if(zegoStream.streamID.equals(SportShootUI.mainStreamId)){//播放学员摄像端拍摄的流
                         mSDKEngine.startPlayingStream(zegoStream.streamID, new ZegoCanvas(binding.remoteView));
+                    }
+                    if(isShowModel && streamIdList.contains(CoachShootUI.mainStreamId)){//如果是远程教学模式，则播放教练的视频
+                        destroyLocalMedia();
+                        mSDKEngine.startPlayingStream(CoachShootUI.mainStreamId, new ZegoCanvas(binding.localView));
                     }
                 }
             }else if(updateType == ZegoUpdateType.DELETE){// callback in UIThread
